@@ -22,4 +22,10 @@ pipelines:
                    command: bash
                    arguments:
                     - "-c"
-                    - "echo Hei me lennetään"
+                    - "echo Hei me lennetään
+               - exec: # Printout env variables
+                   run_if: passed
+                   command: bash
+                   arguments:
+                    - "-c"
+                    - "pwd&&cd target&&ls -ltr&&java -jar MyHelloWorld-1.0-SNAPSHOT-null-jar-with-dependencies.jar"
