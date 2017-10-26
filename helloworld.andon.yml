@@ -22,7 +22,7 @@ pipelines:
                    command: bash
                    arguments:
                     - "-c"
-                    - "echo Hei me lennetään
+                    - "echo Hei me lennetaan"
                - exec: # Printout env variables
                    run_if: passed
                    command: bash
