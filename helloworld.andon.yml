@@ -23,9 +23,15 @@ pipelines:
                    arguments:
                     - "-c"
                     - "echo Hei me lennetaan"
-               - exec: # Printout env variables
+               - exec: # build
                    run_if: passed
                    command: bash
                    arguments:
                     - "-c"
-                    - "pwd&&cd target&&ls -ltr&&java -jar MyHelloWorld-1.0-SNAPSHOT-null-jar-with-dependencies.jar"
+                    - "pwd&&ls -ltr&&cd hello&&ls -ltr&&mvn clean install"
+               - exec: # Run java program
+                   run_if: passed
+                   command: bash
+                   arguments:
+                    - "-c"
+                    - "pwd&&ls -ltr&&cd hello/target&&ls -ltr&&java -jar MyHelloWorld-1.0-SNAPSHOT-null-jar-with-dependencies.jar"
