@@ -17,6 +17,21 @@
     </dependency>
   </dependencies>
 
+     <distributionManagement>
+          <repository>
+              <id>datalake</id>
+              <name>DataLake-releases</name>
+              <uniqueVersion>true</uniqueVersion>
+              <url>http://localhost:8081/artifactory/libs-release-local</url>
+          </repository>
+          <snapshotRepository>
+              <id>datalake-snapshots</id>
+              <name>DataLake-snapshots</name>
+              <uniqueVersion>false</uniqueVersion>
+              <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
+          </snapshotRepository>
+      </distributionManagement>
+
 <build>
 <plugins>
               <plugin>
@@ -77,4 +92,28 @@
 </plugins>
 </build>
 
+      <repositories>
+     <repository>
+         <id>datalake</id>
+         <name>DataLake-releases</name>
+         <snapshots>
+             <enabled>false</enabled>
+         </snapshots>
+         <releases>
+             <updatePolicy>always</updatePolicy>
+         </releases>
+         <url>http://localhost:8081/artifactory/libs-release-local</url>
+     </repository>
+     <repository>
+         <id>datalake-snapshots</id>
+         <name>DataLake-snapshots</name>
+         <snapshots>
+             <updatePolicy>always</updatePolicy>
+         </snapshots>
+         <releases>
+             <enabled>false</enabled>
+         </releases>
+         <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
+     </repository>
+ </repositories>
 </project>
